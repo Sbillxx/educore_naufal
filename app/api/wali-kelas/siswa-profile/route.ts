@@ -49,11 +49,11 @@ export const GET = auth(async function GET(req) {
 
     // 3. Fetch Grades Detail
     const gradesDetail = await query<any[]>(
-      `SELECT sub.name as subjectName, g.exam_type as examType, g.score 
+      `SELECT sub.name as subjectName, g.tugas, g.uts, g.uas, g.final_score as score 
        FROM grades g
        JOIN subjects sub ON g.subject_id = sub.id
        WHERE g.student_id = ?
-       ORDER BY sub.name, g.exam_type`,
+       ORDER BY sub.name`,
       [parseInt(id, 10)]
     );
 

@@ -26,14 +26,14 @@ export default function WaliKelasJadwalPage() {
           if (data.teacher?.name) setTeacherName(data.teacher.name);
           if (data.teacher?.className) setClassName(data.teacher.className);
           
-          // Seed schedules for Kelas Binaan
-          const sampleSchedules: ScheduleItem[] = [
-            { id: 1, subject: "Matematika", time: "07:30 - 09:00", room: "Ruang Kelas Binaan", day: "Senin" },
-            { id: 2, subject: "Fisika", time: "09:15 - 10:45", room: "Ruang Kelas Binaan", day: "Senin" },
-            { id: 3, subject: "Bahasa Inggris", time: "08:00 - 09:30", room: "Ruang Kelas Binaan", day: "Selasa" },
-            { id: 4, subject: "Kimia", time: "10:00 - 11:30", room: "Ruang Kelas Binaan", day: "Rabu" }
-          ];
-          setSchedules(sampleSchedules);
+          // Fetch actual schedules from the new API route
+          const jadwalRes = await fetch("/api/wali-kelas/jadwal");
+          if (jadwalRes.ok) {
+            const jadwalData = await jadwalRes.json();
+            if (jadwalData.schedules) {
+              setSchedules(jadwalData.schedules);
+            }
+          }
         }
       } catch (err) {
         console.error(err);

@@ -95,7 +95,7 @@ export default function GuruInputNilaiPage() {
         })
       });
       if (res.ok) {
-        setToastMessage("Data Nilai siswa berhasil disimpan ke database! Menunggu validasi Wali Kelas.");
+        setToastMessage("Data Nilai siswa berhasil disimpan ke database!");
       } else {
         setToastMessage("Gagal menyimpan data nilai.");
       }
@@ -171,7 +171,6 @@ export default function GuruInputNilaiPage() {
                 <th className="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">UTS (30%)</th>
                 <th className="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">UAS (40%)</th>
                 <th className="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Nilai Akhir</th>
-                <th className="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Status Validasi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-outline-variant/20">
@@ -220,19 +219,6 @@ export default function GuruInputNilaiPage() {
                     <td className="px-6 py-6">
                       <span className="font-headline-md text-[24px] text-primary font-extrabold">
                         {grade.finalScore}
-                      </span>
-                    </td>
-
-                    {/* Validation status badge */}
-                    <td className="px-6 py-6">
-                      <span
-                        className={`inline-flex items-center px-3 py-[2px] rounded-full text-[11px] font-bold ${
-                          grade.status === "VALIDATED"
-                            ? "bg-green-100 text-green-700"
-                            : "bg-surface-container text-on-surface-variant"
-                        }`}
-                      >
-                        {grade.status}
                       </span>
                     </td>
                   </tr>

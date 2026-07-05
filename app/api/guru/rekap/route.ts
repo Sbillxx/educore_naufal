@@ -38,9 +38,9 @@ export const GET = auth(async function GET(req) {
         sub.name as subjectName, 
         u.name as studentName, 
         st.nisn as nis,
-        MAX(IF(g.exam_type = 'Tugas 1', g.score, 0)) as tugas,
-        MAX(IF(g.exam_type = 'UTS', g.score, 0)) as uts,
-        MAX(IF(g.exam_type = 'UAS', g.score, 0)) as uas
+        COALESCE(g.tugas, 0) as tugas,
+        COALESCE(g.uts, 0) as uts,
+        COALESCE(g.uas, 0) as uas
       FROM schedules sch
       JOIN students st ON sch.class_id = st.class_id
       JOIN users u ON st.user_id = u.id
@@ -48,7 +48,7 @@ export const GET = auth(async function GET(req) {
       JOIN classes c ON sch.class_id = c.id
       LEFT JOIN grades g ON g.student_id = st.id AND g.subject_id = sub.id
       WHERE sch.teacher_id = ?
-      GROUP BY c.name, sub.name, u.name, st.nisn, st.id
+      GROUP BY c.name, sub.name, u.name, st.nisn, st.id, g.tugas, g.uts, g.uas
       ORDER BY c.name ASC, sub.name ASC, u.name ASC`,
       [teacherId]
     );

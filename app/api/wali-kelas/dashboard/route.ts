@@ -51,7 +51,7 @@ export const GET = auth(async function GET(req) {
         s.id, 
         u.name, 
         s.nisn,
-        COALESCE((SELECT AVG(g.score) FROM grades g WHERE g.student_id = s.id), 85.0) AS avgGrade,
+        COALESCE((SELECT AVG(g.final_score) FROM grades g WHERE g.student_id = s.id), 85.0) AS avgGrade,
         COALESCE((SELECT att.status FROM attendances att WHERE att.student_id = s.id ORDER BY att.date DESC LIMIT 1), 'hadir') AS latestAttendance
        FROM students s
        JOIN users u ON s.user_id = u.id

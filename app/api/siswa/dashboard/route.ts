@@ -45,13 +45,13 @@ export const GET = auth(async function GET(req) {
     const dbGrades = await query<any[]>(
       `SELECT 
         sub.name AS subject,
-        MAX(CASE WHEN g.exam_type = 'Tugas 1' THEN g.score END) AS tugas,
-        MAX(CASE WHEN g.exam_type = 'UTS' THEN g.score END) AS uts,
-        MAX(CASE WHEN g.exam_type = 'UAS' THEN g.score END) AS uas
+        g.tugas,
+        g.uts,
+        g.uas,
+        g.final_score
        FROM grades g
        JOIN subjects sub ON g.subject_id = sub.id
-       WHERE g.student_id = ?
-       GROUP BY sub.id`,
+       WHERE g.student_id = ? AND g.status = 'VALIDATED'`,
       [student.id]
     );
 
@@ -59,8 +59,8 @@ export const GET = auth(async function GET(req) {
     const gradesList = dbGrades.map((g) => {
       const tugas = parseFloat(g.tugas || 0);
       const uts = parseFloat(g.uts || 0);
-      const uas = parseFloat(g.uas || 85); // default / sample score
-      const finalScore = Number((tugas * 0.3 + uts * 0.3 + uas * 0.4).toFixed(1));
+      const uas = parseFloat(g.uas || 0); 
+      const finalScore = parseFloat(g.final_score || 0);
 
       return {
         subject: g.subject,

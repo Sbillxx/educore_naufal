@@ -37,9 +37,11 @@ export const GET = auth(async function GET(req) {
         st.nisn as nis,
         sub.name as subjectName,
         c.name as className,
-        MAX(IF(g.exam_type = 'Tugas 1', g.score, 0)) as tugas,
-        MAX(IF(g.exam_type = 'UTS', g.score, 0)) as uts,
-        MAX(IF(g.exam_type = 'UAS', g.score, 0)) as uas
+        COALESCE(g.tugas, 0) as tugas,
+        COALESCE(g.uts, 0) as uts,
+        COALESCE(g.uas, 0) as uas,
+        COALESCE(g.final_score, 0) as finalScore,
+        COALESCE(g.status, 'PENDING') as status
       FROM schedules sch
       JOIN students st ON sch.class_id = st.class_id
       JOIN users u ON st.user_id = u.id
@@ -47,29 +49,24 @@ export const GET = auth(async function GET(req) {
       JOIN classes c ON sch.class_id = c.id
       LEFT JOIN grades g ON g.student_id = st.id AND g.subject_id = sub.id
       WHERE sch.teacher_id = ?
-      GROUP BY st.id, u.name, st.nisn, sub.name, c.name
+      GROUP BY st.id, u.name, st.nisn, sub.name, c.name, g.tugas, g.uts, g.uas, g.final_score, g.status
       ORDER BY sub.name ASC, c.name ASC, u.name ASC`,
       [teacherId]
     );
 
     // Transform raw DB results
     const formattedGrades = gradesData.map(row => {
-      const tugas = Number(row.tugas || 0);
-      const uts = Number(row.uts || 0);
-      const uas = Number(row.uas || 0);
-      const finalScore = Number((tugas * 0.3 + uts * 0.3 + uas * 0.4).toFixed(1));
-      
       return {
         id: row.id.toString(),
         name: row.name,
         nis: row.nis,
         subjectName: row.subjectName,
         className: row.className,
-        tugas,
-        uts,
-        uas,
-        finalScore,
-        status: finalScore > 0 ? "VALIDATED" : "PENDING"
+        tugas: Number(row.tugas),
+        uts: Number(row.uts),
+        uas: Number(row.uas),
+        finalScore: Number(row.finalScore),
+        status: row.status
       };
     });
 
@@ -111,20 +108,15 @@ export const POST = auth(async function POST(req) {
       
       // Clear existing records for these exam types
       await query(
-        `DELETE FROM grades WHERE student_id = ? AND subject_id = ? AND exam_type IN ('Tugas 1', 'UTS', 'UAS')`, 
+        `DELETE FROM grades WHERE student_id = ? AND subject_id = ?`, 
         [studentId, subjectId]
       );
 
       // Insert new values
       await query(
-        `INSERT INTO grades (student_id, subject_id, exam_type, score) VALUES 
-        (?, ?, 'Tugas 1', ?),
-        (?, ?, 'UTS', ?),
-        (?, ?, 'UAS', ?)`, 
+        `INSERT INTO grades (student_id, subject_id, tugas, uts, uas, final_score, status) VALUES (?, ?, ?, ?, ?, ?, 'VALIDATED')`, 
         [
-          studentId, subjectId, g.tugas,
-          studentId, subjectId, g.uts,
-          studentId, subjectId, g.uas
+          studentId, subjectId, g.tugas, g.uts, g.uas, g.finalScore
         ]
       );
     }

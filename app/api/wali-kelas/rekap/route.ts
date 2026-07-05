@@ -63,9 +63,9 @@ export const GET = auth(async function GET(req) {
         st.nisn as nis,
         sub.id as subjectId,
         sub.name as subjectName,
-        AVG(CASE WHEN LOWER(g.exam_type) NOT IN ('uts', 'uas') THEN g.score ELSE NULL END) as harianScore,
-        AVG(CASE WHEN LOWER(g.exam_type) = 'uts' THEN g.score ELSE NULL END) as utsScore,
-        AVG(CASE WHEN LOWER(g.exam_type) = 'uas' THEN g.score ELSE NULL END) as uasScore
+        AVG(g.tugas) as harianScore,
+        AVG(g.uts) as utsScore,
+        AVG(g.uas) as uasScore
       FROM students st
       JOIN users u ON st.user_id = u.id
       CROSS JOIN subjects sub
