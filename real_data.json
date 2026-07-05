@@ -1,0 +1,1250 @@
+{
+  "VIII A": {
+    "wali_kelas": "Icah, S.Pd",
+    "students": [
+      {
+        "nisn": "0111047833",
+        "nis": "242507001",
+        "name": "ADINDA RIZQIA NUGRAHA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0111979179",
+        "nis": "242507002",
+        "name": "ADITIA MUHAMAD RIZKI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0123683117",
+        "nis": "242507003",
+        "name": "ADZKIA ZAHRA NURASYIPA",
+        "gender": "P"
+      },
+      {
+        "nisn": "3110442335",
+        "nis": "242507004",
+        "name": "AFKAR ULIL ABSHOR",
+        "gender": "L"
+      },
+      {
+        "nisn": "0114263377",
+        "nis": "242507005",
+        "name": "AJRIL HAMDIL MUBAROK",
+        "gender": "L"
+      },
+      {
+        "nisn": "0122315501",
+        "nis": "242507006",
+        "name": "ALIKA SITI AULIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0127547517",
+        "nis": "242507007",
+        "name": "ALMIRA WAFA NURUL HIDAYAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0111001088",
+        "nis": "242507008",
+        "name": "AMELIA NADA SYIFA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0121973567",
+        "nis": "242507009",
+        "name": "AZMI MOHAMAD BALQIN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0108090184",
+        "nis": "242507010",
+        "name": "DEA AGUSTIN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0115057786",
+        "nis": "242507011",
+        "name": "DIANDRA PUTRI SETIAWAN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0129774158",
+        "nis": "242507012",
+        "name": "DIVA NAUFALYN SALSABILA SETIAWAN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112919662",
+        "nis": "242507013",
+        "name": "JELITA LAILATUL QODRIAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118485901",
+        "nis": "242507014",
+        "name": "JUNA PUTRA ARIFIN NOER",
+        "gender": "L"
+      },
+      {
+        "nisn": "0129902458",
+        "nis": "242507015",
+        "name": "KAILA PUTRI PRANAJAYA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0125709354",
+        "nis": "242507016",
+        "name": "KHANNA ATHAYA IZZATUNNISA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0121526180",
+        "nis": "242507017",
+        "name": "MOCHAMMAD AKBAR PRIADI PUJA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0117087090",
+        "nis": "242507018",
+        "name": "MOHAMAD GARENDRA MAHA PUTRA AL ABYAS",
+        "gender": "L"
+      },
+      {
+        "nisn": "0114321206",
+        "nis": "242507019",
+        "name": "MUHAMAD ABIZAR AL GHIFARI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0112003076",
+        "nis": "242507020",
+        "name": "MUHAMAD FITRAN FAHREZI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0125501425",
+        "nis": "242507021",
+        "name": "MUHAMAD HAFIZ MULYANA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0118137915",
+        "nis": "242507022",
+        "name": "MUHAMMAD ARGA PRADITYA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0115456552",
+        "nis": "242507023",
+        "name": "MUHAMMAD ARYA PUTRA NURALAMSYAH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0108203415",
+        "nis": "242507024",
+        "name": "MUHAMMAD NURUL IKHSAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0117049893",
+        "nis": "242507025",
+        "name": "MUHAMMAD RIZQI ABDILLAH YUSUF",
+        "gender": "L"
+      },
+      {
+        "nisn": "0115120615",
+        "nis": "242507026",
+        "name": "MUHAMMAD ZHISAN FAYYADH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0119082425",
+        "nis": "242507027",
+        "name": "NABILA HANI FAUZIYAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0111133356",
+        "nis": "242507028",
+        "name": "NAZMA PUTRI NURHIDAYAT",
+        "gender": "P"
+      },
+      {
+        "nisn": "0129492325",
+        "nis": "242507029",
+        "name": "NESA MUSTAKIMAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0117073060",
+        "nis": "242507030",
+        "name": "RADEN SAKHI ADRIAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0113743266",
+        "nis": "242507031",
+        "name": "RAISHA SHADA ZULEIKA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112867629",
+        "nis": "242507032",
+        "name": "RASTI OKTAVIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0123049584",
+        "nis": "242507033",
+        "name": "ROHMAT HIDAYAT PUTRA TAMALA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0117125813",
+        "nis": "242507034",
+        "name": "SAILA ATHIA WIDIASTOMO",
+        "gender": "P"
+      },
+      {
+        "nisn": "0125757389",
+        "nis": "242507035",
+        "name": "VARISYA NATAMELIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112905276",
+        "nis": "242507036",
+        "name": "ZAKIRA RIZQITA RAMADHANISA",
+        "gender": "P"
+      }
+    ]
+  },
+  "VIII B": {
+    "wali_kelas": "Cahya Risyana, S.Pd",
+    "students": [
+      {
+        "nisn": "0118111281",
+        "nis": "242507037",
+        "name": "AFFAN INSAN MULYADI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128231531",
+        "nis": "242507038",
+        "name": "AGNI HADYA SYIRA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118996533",
+        "nis": "242507039",
+        "name": "AGNI VIRNA SEPTIANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112573126",
+        "nis": "242507040",
+        "name": "AL FACHRI NUSATAMA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0123902777",
+        "nis": "242507041",
+        "name": "ANDHIKA WIRA ABIZARD",
+        "gender": "L"
+      },
+      {
+        "nisn": "0112731193",
+        "nis": "242507042",
+        "name": "ANDRI SETIAWAN SUTISNA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0119072724",
+        "nis": "242507043",
+        "name": "ARGA DWI NASTIAR",
+        "gender": "L"
+      },
+      {
+        "nisn": "0121899167",
+        "nis": "242507044",
+        "name": "AULYA ESTY MAHARANI PUTRI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0127043777",
+        "nis": "242507045",
+        "name": "AZKIYA RACMANIA RAHAYU",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112180296",
+        "nis": "242507046",
+        "name": "BELLA FITRI SASHIRA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0116424867",
+        "nis": "242507047",
+        "name": "DIARA NURRIEL AZHULLA",
+        "gender": "P"
+      },
+      {
+        "nisn": "3121356890",
+        "nis": "242507048",
+        "name": "FARHAN ZAIDAN AL HAWARI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0129843833",
+        "nis": "242507049",
+        "name": "FARREN AISYA FAIHA KAMAL",
+        "gender": "P"
+      },
+      {
+        "nisn": "0123634812",
+        "nis": "242507050",
+        "name": "MAULIDA MAHARDIKA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0114485904",
+        "nis": "242507051",
+        "name": "MOCHAMAD CALVIN HERMANSYAH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0111481195",
+        "nis": "242507052",
+        "name": "MUHAMMAD AHFADH SAUQIL",
+        "gender": "L"
+      },
+      {
+        "nisn": "0127900737",
+        "nis": "242507053",
+        "name": "MUHAMMAD MAHARDIKA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0113039770",
+        "nis": "242507054",
+        "name": "NADHIFA ZAHIRA QURAATU'AIN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0115530315",
+        "nis": "242507055",
+        "name": "NATHANIA JANEETA ROLEN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0129316845",
+        "nis": "242507056",
+        "name": "NAURA AMANINA SYAQINAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0128768920",
+        "nis": "242507057",
+        "name": "NAYSHA SALSABILA DARIPIN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0115451631",
+        "nis": "242507058",
+        "name": "NIZAR RAMA HIDAYATULLOH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0116459488",
+        "nis": "242507059",
+        "name": "REYHAN AGUSTIAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0113395121",
+        "nis": "242507060",
+        "name": "SELVI ANGGRAENI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0107014791",
+        "nis": "242507061",
+        "name": "SONI MUHAMAD SAPUTRA",
+        "gender": "L"
+      },
+      {
+        "nisn": "3121955737",
+        "nis": "242507062",
+        "name": "SYAHLA TALITA DZAKIRAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118640065",
+        "nis": "242507063",
+        "name": "SYIFA LASMANA SURYADI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112187747",
+        "nis": "242507064",
+        "name": "UMMY SAYYDATULYAUM",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112578648",
+        "nis": "242507065",
+        "name": "WISNU WIBIKSANA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0121797058",
+        "nis": "242507066",
+        "name": "YASSIRLY AMRIYA PUTRI SINURAYA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0115617673",
+        "nis": "242507067",
+        "name": "YUDHA BERLIYANA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0119360808",
+        "nis": "242507068",
+        "name": "ZAHANDO ARRIMBA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0119248303",
+        "nis": "242507069",
+        "name": "ZASHY SYABAN ZAKZHENA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0092023758",
+        "nis": "242507070",
+        "name": "ZASKIA RAISHA ALOFIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0128959411",
+        "nis": "242507071",
+        "name": "ZEYRA MARISTA SRINGGANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0117141745",
+        "nis": "242507072",
+        "name": "ZIDAN GERALDI FAHREZI",
+        "gender": "L"
+      }
+    ]
+  },
+  "IX A": {
+    "wali_kelas": "H. Wawan Herniwan, M.Pd",
+    "students": [
+      {
+        "nisn": "0104111922",
+        "nis": "232407001",
+        "name": "ALFIA NUR SYAHRA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0106702163",
+        "nis": "232407002",
+        "name": "ALVIN HIKMAL FAUZI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0107847562",
+        "nis": "242508357",
+        "name": "ANDHINI FUTRI FEBRIANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "3117070598",
+        "nis": "232407003",
+        "name": "ANIS AGNITA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0119169183",
+        "nis": "232407005",
+        "name": "ASYA REVITA MAYA ELFIANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118155663",
+        "nis": "232407006",
+        "name": "BUNGA KIRANA RIZQI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0109096395",
+        "nis": "232407007",
+        "name": "DIMAS RAMADHAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0102970534",
+        "nis": "232407008",
+        "name": "FADIL TABINA JULSAHFAYANA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0112723977",
+        "nis": "232407010",
+        "name": "HANIFA ZAHROTUNNAJAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0119724258",
+        "nis": "232407011",
+        "name": "HASRI AINUN PUJA ANDINI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0101955924",
+        "nis": "232407012",
+        "name": "HILMA FAUZIAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118257536",
+        "nis": "242508350",
+        "name": "KAYLANISSA ZHAFIRA UDRAYANA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0104094401",
+        "nis": "232407014",
+        "name": "KHAYYIRA NIDA AMIRAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0092023758",
+        "nis": "232407015",
+        "name": "LIA LESTARI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112205404",
+        "nis": "232407016",
+        "name": "MEILANI DZIKRIN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0106439412",
+        "nis": "232407017",
+        "name": "MUHAMAD HAYKAL PAMUNGKAS",
+        "gender": "L"
+      },
+      {
+        "nisn": "0117519766",
+        "nis": "232407018",
+        "name": "MUHAMMAD ALBI ARAASYID",
+        "gender": "L"
+      },
+      {
+        "nisn": "0118250137",
+        "nis": "232407019",
+        "name": "MUHAMMAD NUR RAFKA HABIBIE",
+        "gender": "L"
+      },
+      {
+        "nisn": "0109390666",
+        "nis": "232407020",
+        "name": "MUHAMMAD RASYA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0092660217",
+        "nis": "232407022",
+        "name": "NABILA ISLAMI RAMADHAN",
+        "gender": "P"
+      },
+      {
+        "nisn": "0108452406",
+        "nis": "232407023",
+        "name": "NURLAELI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118769601",
+        "nis": "232407024",
+        "name": "PUTRI CECILLIA HAKIM",
+        "gender": "P"
+      },
+      {
+        "nisn": "0105079664",
+        "nis": "232407025",
+        "name": "PUTRI OKTAVIANA SARI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118613366",
+        "nis": "232407026",
+        "name": "RAAFA AZHAR FABIANO ZEBUA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0109807778",
+        "nis": "232407027",
+        "name": "RADHITA AGUSTIA RAHMAT",
+        "gender": "P"
+      },
+      {
+        "nisn": "0105257390",
+        "nis": "232407028",
+        "name": "RAFAEL NABEEL RAHMADIANA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0117588400",
+        "nis": "232407029",
+        "name": "RAJRENDRA RAYA IBRAHIM",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105094587",
+        "nis": "232407030",
+        "name": "RANI MULYANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0114706558",
+        "nis": "232407031",
+        "name": "RIFKI PUTRA HERYANTO",
+        "gender": "L"
+      },
+      {
+        "nisn": "0108213747",
+        "nis": "232407032",
+        "name": "SALMAN DAFFA KURNIAWAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105131860",
+        "nis": "232407033",
+        "name": "TARISA AYU RIZKIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0119130318",
+        "nis": "232407034",
+        "name": "WITA PUTRI SUMARDI",
+        "gender": "P"
+      }
+    ]
+  },
+  "IX B": {
+    "wali_kelas": "Atie Novita Zahroh, S.Pd",
+    "students": [
+      {
+        "nisn": "0105997987",
+        "nis": "232407036",
+        "name": "ABDI JALU PANGERSA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0104989834",
+        "nis": "232407037",
+        "name": "AJIZ KUSTANDI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105764549",
+        "nis": "232407038",
+        "name": "AKBAR RIZI KURNIAWAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0108562675",
+        "nis": "232407039",
+        "name": "ALZENA OKTAVIANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112884901",
+        "nis": "232407040",
+        "name": "ANINDYA MAULIDA HERDIANA",
+        "gender": "P"
+      },
+      {
+        "nisn": "3108673688",
+        "nis": "232407041",
+        "name": "ASRI FEBRIYANI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0107105265",
+        "nis": "232407042",
+        "name": "AULYA FUTRI NUR FAZZRILAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118986175",
+        "nis": "232407043",
+        "name": "CITRA INDAH PRATIWI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0112629440",
+        "nis": "232407044",
+        "name": "DANISH FAJAR CAHYA SANJAYA",
+        "gender": "L"
+      },
+      {
+        "nisn": "3121475187",
+        "nis": "232407045",
+        "name": "DELISA TRIULFIANNISA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0106532227",
+        "nis": "232407046",
+        "name": "ELMA SHIRIN AINI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0111182202",
+        "nis": "232407047",
+        "name": "FADEL MUHAMMAD PUTRA ZAENI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0107669813",
+        "nis": "232407048",
+        "name": "FARID MUHAMMAD IHSAN",
+        "gender": "L"
+      },
+      {
+        "nisn": "0119411407",
+        "nis": "232407049",
+        "name": "FERDIANSYAH MAULANA PUTRA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0106060607",
+        "nis": "232407050",
+        "name": "KEYSHA KAMILA PUTRI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0103740652",
+        "nis": "232407051",
+        "name": "MAULINA SITI NUR'AENI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0116644678",
+        "nis": "232407053",
+        "name": "MUHAMAD IKBAR FADHILAH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105405175",
+        "nis": "232407054",
+        "name": "MUHAMMAD AL-FATIH SAPUTRA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0117533015",
+        "nis": "232407055",
+        "name": "MUHAMMAD AL FATIH AL MUTAWALLE",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105746079",
+        "nis": "232407056",
+        "name": "MUHAMMAD FADHIL ARROFIQ",
+        "gender": "L"
+      },
+      {
+        "nisn": "0112875710",
+        "nis": "232407057",
+        "name": "MUHAMMAD HAFIZH APRIANSYAH",
+        "gender": "L"
+      },
+      {
+        "nisn": "0111044031",
+        "nis": "232407058",
+        "name": "NAAJLA ADNI SABILLA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0104931652",
+        "nis": "232407059",
+        "name": "NATASYA LIM WIJAYA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0111954415",
+        "nis": "232407060",
+        "name": "NURMA SHAUMY ATTALAH",
+        "gender": "P"
+      },
+      {
+        "nisn": "010480227",
+        "nis": "232407366",
+        "name": "QORY RAMDIANI KURNIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0117273385",
+        "nis": "232407061",
+        "name": "RAHMA FAKHRUN NISA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0124004247",
+        "nis": "232407062",
+        "name": "RANDI MAULANA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0109255710",
+        "nis": "232407063",
+        "name": "RAYHAN MAULANA YUSUF",
+        "gender": "L"
+      },
+      {
+        "nisn": "0105240683",
+        "nis": "232407064",
+        "name": "REGINA AURORA PUTRI",
+        "gender": "P"
+      },
+      {
+        "nisn": "0102163528",
+        "nis": "232407065",
+        "name": "RESTU RAINDRA",
+        "gender": "L"
+      },
+      {
+        "nisn": "0116304902",
+        "nis": "232407066",
+        "name": "RIFANI APRILIA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0106365600",
+        "nis": "232407067",
+        "name": "SABIQ FADILA RUSTANDI",
+        "gender": "L"
+      },
+      {
+        "nisn": "0108639555",
+        "nis": "232407068",
+        "name": "SHAFIRA AULIA RAMADHINA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0118765774",
+        "nis": "232407069",
+        "name": "SHILLA AULIA NUR SAFIRA",
+        "gender": "P"
+      },
+      {
+        "nisn": "0106438373",
+        "nis": "232407070",
+        "name": "SYAHLA ALTARIA AGUSTIN",
+        "gender": "P"
+      }
+    ]
+  },
+  "VII A": {
+    "wali_kelas": "Fanny Fadilla, S.Sos",
+    "students": [
+      {
+        "nisn": "0135893733",
+        "nis": "252607001",
+        "name": "Ahnaf Hudzaifah Ibnul Sidiq",
+        "gender": "L"
+      },
+      {
+        "nisn": "3123741034",
+        "nis": "252607002",
+        "name": "Alika Novera Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "3125828881",
+        "nis": "252607003",
+        "name": "Aliya Fitriawati",
+        "gender": "P"
+      },
+      {
+        "nisn": "3126599605",
+        "nis": "252607004",
+        "name": "Ananda Putri Handayani Belmondo",
+        "gender": "P"
+      },
+      {
+        "nisn": "0128499601",
+        "nis": "252607005",
+        "name": "Arya Jovanca Satriani",
+        "gender": "L"
+      },
+      {
+        "nisn": "3126007882",
+        "nis": "252607006",
+        "name": "Arya Widira Sura",
+        "gender": "L"
+      },
+      {
+        "nisn": "3128589985",
+        "nis": "252607007",
+        "name": "Azriel Izzulhaq",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128215993",
+        "nis": "252607008",
+        "name": "Azzahra Fitriani",
+        "gender": "P"
+      },
+      {
+        "nisn": "3120274179",
+        "nis": "252607009",
+        "name": "Caca Althopunnisa Hendrayana",
+        "gender": "P"
+      },
+      {
+        "nisn": "3128399700",
+        "nis": "252607010",
+        "name": "Erlinda Callista Taufik",
+        "gender": "P"
+      },
+      {
+        "nisn": "0137579329",
+        "nis": "252607011",
+        "name": "Farish Alfarizqi",
+        "gender": "L"
+      },
+      {
+        "nisn": "3125983161",
+        "nis": "252607012",
+        "name": "Gelsi Adiva Naira Milanis",
+        "gender": "P"
+      },
+      {
+        "nisn": "3121709357",
+        "nis": "252607013",
+        "name": "Gina Nurmaulida",
+        "gender": "P"
+      },
+      {
+        "nisn": "0122440975",
+        "nis": "252607014",
+        "name": "Irza Hamdan Kautsar",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128211793",
+        "nis": "252607015",
+        "name": "Kayla Ardiyanti",
+        "gender": "P"
+      },
+      {
+        "nisn": "3129775556",
+        "nis": "252607016",
+        "name": "Muhamad Insan Tauhid",
+        "gender": "L"
+      },
+      {
+        "nisn": "3126620006",
+        "nis": "252607018",
+        "name": "Nafisa Zayin Ramdan",
+        "gender": "P"
+      },
+      {
+        "nisn": "3131050846",
+        "nis": "252607019",
+        "name": "Nazhif Abdul Latif",
+        "gender": "L"
+      },
+      {
+        "nisn": "0127988091",
+        "nis": "252607020",
+        "name": "Nissa Zahra Awalia",
+        "gender": "P"
+      },
+      {
+        "nisn": "0128262873",
+        "nis": "252607021",
+        "name": "Putra Kelvin Sepdwirena",
+        "gender": "L"
+      },
+      {
+        "nisn": "3127093529",
+        "nis": "252607022",
+        "name": "Putri Adelia Ramdani",
+        "gender": "P"
+      },
+      {
+        "nisn": "0123233756",
+        "nis": "252607023",
+        "name": "Raisa Ramadhani Fidarlian",
+        "gender": "P"
+      },
+      {
+        "nisn": "0121273699",
+        "nis": "252607024",
+        "name": "Rakha Padika Fauzi Muharram",
+        "gender": "L"
+      },
+      {
+        "nisn": "0127833383",
+        "nis": "252607025",
+        "name": "Reyna Putri Noviani",
+        "gender": "P"
+      },
+      {
+        "nisn": "3124068512",
+        "nis": "252607026",
+        "name": "Richard Reynald Febian",
+        "gender": "L"
+      },
+      {
+        "nisn": "3126939149",
+        "nis": "252607027",
+        "name": "Rizqi Mugni Ramdani",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128216793",
+        "nis": "252607028",
+        "name": "Selvina Nur Anisa Nugraha",
+        "gender": "P"
+      },
+      {
+        "nisn": "0103575208",
+        "nis": "252607029",
+        "name": "Syafa Nazwa Amaniya",
+        "gender": "P"
+      },
+      {
+        "nisn": "0129184319",
+        "nis": "252607030",
+        "name": "Syauqi Amsyar Nugraha",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128125726",
+        "nis": "252607031",
+        "name": "Viona Rahayu Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "0131341188",
+        "nis": "252607032",
+        "name": "Yasmin Maulida",
+        "gender": "P"
+      },
+      {
+        "nisn": "0",
+        "nis": "0",
+        "name": "0",
+        "gender": "P"
+      }
+    ]
+  },
+  "VII B": {
+    "wali_kelas": "Siti Halimah, S.Pd",
+    "students": [
+      {
+        "nisn": "3135126639",
+        "nis": "252607033",
+        "name": "Adrian Kaisar Syaban Hediawan Ace",
+        "gender": "L"
+      },
+      {
+        "nisn": "3123464561",
+        "nis": "252607034",
+        "name": "Agung Zaenudin Al Zipari",
+        "gender": "L"
+      },
+      {
+        "nisn": "0118351740",
+        "nis": "252607035",
+        "name": "Ahmad Al Ikhsan Nuruddin",
+        "gender": "L"
+      },
+      {
+        "nisn": "0135166776",
+        "nis": "252607036",
+        "name": "Aliza Nur Maulida",
+        "gender": "P"
+      },
+      {
+        "nisn": "3126434625",
+        "nis": "252607037",
+        "name": "Amaliya Husna Nadiya Ramadhani",
+        "gender": "P"
+      },
+      {
+        "nisn": "3121837096",
+        "nis": "252607038",
+        "name": "Asha Putrianshori",
+        "gender": "P"
+      },
+      {
+        "nisn": "0138225882",
+        "nis": "252607039",
+        "name": "Azya Baihaqi Khaizan",
+        "gender": "L"
+      },
+      {
+        "nisn": "3139549225",
+        "nis": "252607040",
+        "name": "Azzyza Rahma Aulia",
+        "gender": "P"
+      },
+      {
+        "nisn": "3123659221",
+        "nis": "252607041",
+        "name": "Carisya Amalia Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "0124974609",
+        "nis": "252607042",
+        "name": "Dini Anggraeni",
+        "gender": "P"
+      },
+      {
+        "nisn": "3133891687",
+        "nis": "252607043",
+        "name": "Febriyadi Saputra",
+        "gender": "L"
+      },
+      {
+        "nisn": "0129610036",
+        "nis": "252607044",
+        "name": "Fhely Akbar Pratiwi",
+        "gender": "P"
+      },
+      {
+        "nisn": "0129215793",
+        "nis": "252607045",
+        "name": "Fidela Fakhira Mayesa",
+        "gender": "P"
+      },
+      {
+        "nisn": "0131689849",
+        "nis": "252607046",
+        "name": "Haikal Kamil Alfarizi",
+        "gender": "L"
+      },
+      {
+        "nisn": "0136851586",
+        "nis": "252607047",
+        "name": "Ilyas Abimanyu Maulana",
+        "gender": "L"
+      },
+      {
+        "nisn": "3138890711",
+        "nis": "252607048",
+        "name": "Isti Zahra Nurjanah",
+        "gender": "P"
+      },
+      {
+        "nisn": "0122873585",
+        "nis": "252607049",
+        "name": "Keyra Humaira Karin",
+        "gender": "P"
+      },
+      {
+        "nisn": "3125435840",
+        "nis": "252607050",
+        "name": "Khayla Naura Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "3124540927",
+        "nis": "252607051",
+        "name": "Muhamad Davian Rizki",
+        "gender": "L"
+      },
+      {
+        "nisn": "0102112968",
+        "nis": "252607052",
+        "name": "Muhammad Fajar Alghani",
+        "gender": "L"
+      },
+      {
+        "nisn": "3128342838",
+        "nis": "252607053",
+        "name": "Muhammad Nurul Anbiya",
+        "gender": "L"
+      },
+      {
+        "nisn": "0122086272",
+        "nis": "252607054",
+        "name": "Muhammad Raihan Pratama",
+        "gender": "L"
+      },
+      {
+        "nisn": "0128780188",
+        "nis": "252607055",
+        "name": "Najwa Aulia Febriani",
+        "gender": "P"
+      },
+      {
+        "nisn": "0119720258",
+        "nis": "252607056",
+        "name": "Nasywa Nur Aisha Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "0105171140",
+        "nis": "252607057",
+        "name": "Nizella Septyara Deryan",
+        "gender": "P"
+      },
+      {
+        "nisn": "3122622211",
+        "nis": "252607058",
+        "name": "Rafa Arya Wiguna",
+        "gender": "L"
+      },
+      {
+        "nisn": "3121998404",
+        "nis": "252607060",
+        "name": "Rizky Septiana",
+        "gender": "L"
+      },
+      {
+        "nisn": "0134510651",
+        "nis": "252607061",
+        "name": "Rizqi Fadli Ubaidillah",
+        "gender": "L"
+      },
+      {
+        "nisn": "0125441071",
+        "nis": "252607062",
+        "name": "Salsa Mei Cahyani",
+        "gender": "P"
+      },
+      {
+        "nisn": "3125522312",
+        "nis": "252607063",
+        "name": "Syfa Aulia Putri",
+        "gender": "P"
+      },
+      {
+        "nisn": "3123449918",
+        "nis": "252607064",
+        "name": "Zahra Ramadhani",
+        "gender": "P"
+      },
+      {
+        "nisn": "0",
+        "nis": "0",
+        "name": "0",
+        "gender": "P"
+      }
+    ]
+  }
+}

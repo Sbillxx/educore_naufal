@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Academia Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaedff",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "surface-container-high": "#e2e7ff",
+                    "tertiary-fixed": "#acedff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#d7f6ff",
+                    "outline": "#737686",
+                    "on-primary-container": "#eeefff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#00174b",
+                    "on-surface": "#131b2e",
+                    "secondary": "#4b41e1",
+                    "surface-dim": "#d2d9f4",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#e2dfff",
+                    "surface-container-low": "#f2f3ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#fffbff",
+                    "surface": "#faf8ff",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#0053db",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "inverse-on-surface": "#eef0ff",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#faf8ff",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "on-secondary-fixed-variant": "#3323cc",
+                    "secondary-container": "#645efb",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed": "#001f26",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-fixed": "#00174b",
+                    "tertiary-container": "#00788c",
+                    "on-background": "#131b2e",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-surface": "#283044",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#005e6e",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#b4c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "1.5rem",
+                    "container-max": "1440px",
+                    "sidebar-collapsed": "72px",
+                    "gutter": "1.5rem",
+                    "xl": "2.5rem",
+                    "md": "1rem",
+                    "sm": "0.75rem",
+                    "xs": "0.5rem",
+                    "sidebar-expanded": "260px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .bg-mesh {
+            background-color: #faf8ff;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(217,100%,90%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(188,100%,90%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(231,100%,95%,1) 0, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-mesh min-h-screen flex items-center justify-center font-body-md text-on-surface p-md">
+<!-- Main Container -->
+<main class="w-full max-w-[1200px] h-full lg:h-[800px] flex flex-col md:flex-row overflow-hidden rounded-xl shadow-xl bg-white/20">
+<!-- Left Side: Illustration Section -->
+<section class="hidden md:flex flex-1 relative items-center justify-center bg-primary overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern school dashboard interface" class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="A cinematic, ultra-modern digital dashboard interface for education, featuring glowing teal and sapphire blue data visualizations, circular progress charts, and clean white typography. The setting is a minimalist, high-tech workspace with soft bokeh lighting in the background. The visual style is premium and corporate, using a light-mode aesthetic with vibrant primary blue accents to convey intelligence and academic trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCllIEXfQafeaQhIgeKqkfKCETA4D1YjZ4RoPvFzYxAPi3E-t-tCIHRJKV1jptKkUf_sQn7k0LTa00cOPPN5tcuZ_1VAYF0FEJvwvoUjRMhlObIa8AFiLHSC9faixmIZN0KLFOFjMwgTVEs-w5BbPJjNRVqm1nYHwdyHI2wXrzZIpMqw6bd9zLSXDfaC4xz4mSWryCQBxb4fTm36hcOhGP68HTqYsiDQEXI0XTtQRMWzZvmK2smcg4qke4RA35mOJ5znawPsJdNWwTH"/>
+</div>
+<div class="relative z-10 p-xl text-white max-w-md">
+<h1 class="font-display-lg text-display-lg mb-md leading-tight">Elevate Your Academic Journey.</h1>
+<p class="font-body-lg text-body-lg opacity-90 mb-xl">Manage grades, schedules, and student progress with Academia Pro's intelligent management system.</p>
+<!-- Floating Feature Badges -->
+<div class="space-y-md">
+<div class="flex items-center gap-md bg-white/10 backdrop-blur-md p-md rounded-lg border border-white/20">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed">analytics</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Real-time Analytics</p>
+<p class="font-body-sm text-body-sm opacity-70">Track performance metrics instantly.</p>
+</div>
+</div>
+<div class="flex items-center gap-md bg-white/10 backdrop-blur-md p-md rounded-lg border border-white/20">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed">calendar_month</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Dynamic Scheduling</p>
+<p class="font-body-sm text-body-sm opacity-70">Optimized calendars for everyone.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form Section -->
+<section class="flex-1 flex flex-col items-center justify-center p-md lg:p-xl relative bg-white/30 backdrop-blur-sm">
+<div class="w-full max-w-[400px] flex flex-col items-center">
+<!-- Brand Header -->
+<div class="mb-xl text-center">
+<div class="flex items-center justify-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Academia Pro</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Sign in to your administrative account</p>
+</div>
+<!-- Glassmorphism Login Card -->
+<div class="glass-card w-full p-lg rounded-xl shadow-sm space-y-lg transition-all duration-300 hover:shadow-md">
+<form class="space-y-md" id="loginForm">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-xs" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full h-[48px] pl-[48px] pr-md bg-white/50 border border-outline-variant/50 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-body-md" id="email" placeholder="name@school.edu" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-xs" for="password">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full h-[48px] pl-[48px] pr-[48px] bg-white/50 border border-outline-variant/50 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-body-md" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant transition-colors cursor-pointer" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined" id="eyeIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot & Remember -->
+<div class="flex items-center justify-between py-xs">
+<label class="flex items-center gap-xs cursor-pointer select-none">
+<div class="relative flex items-center">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded bg-white checked:bg-primary checked:border-primary transition-all cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white scale-0 peer-checked:scale-75 transition-transform text-[20px] pointer-events-none">check</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-md text-label-md text-primary hover:underline transition-all" href="#">Forgot password?</a>
+</div>
+<!-- Validation Message (Hidden by default) -->
+<div class="hidden flex items-center gap-xs p-sm bg-error-container/50 border border-error/20 rounded-lg text-on-error-container" id="validation-error">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<p class="font-body-sm text-body-sm">Invalid credentials. Please try again.</p>
+</div>
+<!-- Login Button -->
+<button class="w-full h-[48px] bg-gradient-to-r from-primary to-secondary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-200 uppercase tracking-wider" type="submit">
+                            Login
+                        </button>
+</form>
+</div>
+<!-- Footer Links -->
+<div class="mt-xl text-center space-y-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Having trouble? <a class="text-primary font-semibold hover:underline" href="#">Contact Administrator</a>
+</p>
+<div class="flex items-center justify-center gap-lg opacity-40">
+<span class="font-label-sm text-label-sm">Privacy Policy</span>
+<span class="font-label-sm text-label-sm">Terms of Service</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerText = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerText = 'visibility';
+            }
+        }
+
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const errorDiv = document.getElementById('validation-error');
+            
+            // Mock validation logic
+            const email = document.getElementById('email').value;
+            if (email !== 'admin@school.edu') {
+                errorDiv.classList.remove('hidden');
+                errorDiv.classList.add('flex');
+            } else {
+                errorDiv.classList.add('hidden');
+                alert('Login Successful! Redirecting to Dashboard...');
+            }
+        });
+
+        // Add subtle animation to floating badges on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const amount = 10;
+            const x = (e.clientX / window.innerWidth - 0.5) * amount;
+            const y = (e.clientY / window.innerHeight - 0.5) * amount;
+            
+            const badges = document.querySelectorAll('.space-y-md > div');
+            badges.forEach((badge, index) => {
+                const multiplier = (index + 1) * 0.5;
+                badge.style.transform = `translate(${x * multiplier}px, ${y * multiplier}px)`;
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academia Pro | Attendance Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eaedff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#d7f6ff",
+                        "outline": "#737686",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#00174b",
+                        "on-surface": "#131b2e",
+                        "secondary": "#4b41e1",
+                        "surface-dim": "#d2d9f4",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#e2dfff",
+                        "surface-container-low": "#f2f3ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0053db",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "on-surface-variant": "#434655",
+                        "primary": "#004ac6",
+                        "inverse-on-surface": "#eef0ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-secondary-fixed-variant": "#3323cc",
+                        "secondary-container": "#645efb",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-fixed": "#000a69",
+                        "tertiary-container": "#00788c",
+                        "on-background": "#131b2e",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-surface": "#283044",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#005e6e",
+                        "background": "#faf8ff",
+                        "inverse-primary": "#b4c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "1.5rem",
+                        "container-max": "1440px",
+                        "sidebar-collapsed": "72px",
+                        "gutter": "1.5rem",
+                        "xl": "2.5rem",
+                        "md": "1rem",
+                        "sm": "0.75rem",
+                        "xs": "0.5rem",
+                        "sidebar-expanded": "260px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .attendance-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c3c6d7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- Shell Container -->
+<div class="flex h-screen w-full">
+<!-- SideNavBar Shared Component -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-expanded bg-white dark:bg-inverse-surface border-r border-outline-variant/30 flex flex-col p-md gap-xs shadow-sm z-50">
+<div class="flex items-center gap-sm px-sm py-md">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim leading-none">EduCore</h1>
+<p class="text-on-surface-variant font-label-sm text-[10px] uppercase tracking-wider">Academic Management</p>
+</div>
+</div>
+<nav class="flex-1 mt-lg space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Schedules -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Schedules</span>
+</a>
+<!-- Attendance (Active) -->
+<a class="flex items-center gap-md px-md py-sm text-primary dark:text-primary-fixed-dim font-bold bg-primary-fixed/30 dark:bg-primary-fixed-dim/10 rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+<span>Attendance</span>
+</a>
+<!-- Students -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Students</span>
+</a>
+<!-- Grades -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+<span>Grades</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all translate-x-1 duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/20 pt-md space-y-1">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-error hover:bg-error-container/20 rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-sidebar-expanded flex flex-col overflow-hidden">
+<!-- TopNavBar Shared Component -->
+<header class="sticky top-0 z-40 w-full px-lg py-sm bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center shadow-sm">
+<div class="flex items-center gap-lg">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-md text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-xl pr-md py-xs text-body-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="flex items-center gap-sm pl-md border-l border-outline-variant/30">
+<div class="text-right">
+<p class="font-label-md text-label-md leading-none">Sarah Jenkins</p>
+<p class="font-label-sm text-[10px] text-on-surface-variant">Homeroom Teacher</p>
+</div>
+<img alt="User profile" class="w-9 h-9 rounded-full object-cover border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC56ByhvCgABc-6SO1OCHZJHkj56v9izDc1sNJvciZdwJYbBI9YcvJ9qmIgbnmLi-GMCDaA23qg89bcfoXgcmlg5YdB4SSLmoUe57xkgzGNBurIaUBr1UprW316uBr07RgaFIjJTyoSw96qR5E9GZ-TswwrGtxz7zzB-dif4MYFJ5uTuK3P25GGE6Wed2Jb9WYPTn39qQ5jR6ZXlsPsQwBs-flsmjoEOInVQfc1O7M2fic6YxMPTBTvE7wjzjyNS5eq2SexiOi0U5fP"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 overflow-y-auto p-xl space-y-xl">
+<!-- Page Header & Stats Row -->
+<div class="flex flex-col gap-lg lg:flex-row lg:items-end lg:justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Attendance Management</h2>
+<p class="text-on-surface-variant font-body-md">Managing Grade 12-B Science Class — Oct 24, 2023</p>
+</div>
+<!-- Modern Stats Row -->
+<div class="flex gap-md">
+<div class="bg-white border border-outline-variant/30 rounded-xl p-md flex items-center gap-md shadow-sm min-w-[160px]">
+<div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-[10px] font-label-sm uppercase text-on-surface-variant">Present</p>
+<p class="font-headline-md text-headline-md leading-none">28</p>
+</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-xl p-md flex items-center gap-md shadow-sm min-w-[160px]">
+<div class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined" data-icon="cancel" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<div>
+<p class="text-[10px] font-label-sm uppercase text-on-surface-variant">Absent</p>
+<p class="font-headline-md text-headline-md leading-none">2</p>
+</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-xl p-md flex items-center gap-md shadow-sm min-w-[160px]">
+<div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="medical_services" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div>
+<p class="text-[10px] font-label-sm uppercase text-on-surface-variant">Excused</p>
+<p class="font-headline-md text-headline-md leading-none">4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Filters & Control Bar -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-lg flex flex-wrap items-center justify-between gap-md shadow-sm">
+<div class="flex flex-wrap items-center gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-on-surface-variant">Select Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+<input class="pl-xl pr-md py-sm bg-slate-50 border-none rounded-lg font-body-sm focus:ring-2 focus:ring-primary/20 cursor-pointer" type="date" value="2023-10-24"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-on-surface-variant">Class</label>
+<select class="pl-md pr-xl py-sm bg-slate-50 border-none rounded-lg font-body-sm focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer">
+<option>Grade 12-B Science</option>
+<option>Grade 12-A Science</option>
+<option>Grade 11-C Arts</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-on-surface-variant">Subject</label>
+<select class="pl-md pr-xl py-sm bg-slate-50 border-none rounded-lg font-body-sm focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer">
+<option>Advanced Physics</option>
+<option>Mathematics</option>
+<option>Biology</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-md py-sm rounded-lg border border-outline-variant/50 font-label-md text-label-md hover:bg-surface-container transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="grid_view">grid_view</span>
+                            Summary View
+                        </button>
+<button class="flex items-center gap-xs px-lg py-sm rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-label-md text-label-md shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+                            Export PDF
+                        </button>
+</div>
+</div>
+<!-- Bento-style Content Area -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Main Attendance Table Card -->
+<div class="col-span-12 lg:col-span-8 bg-white border border-outline-variant/30 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-lg py-md border-b border-outline-variant/20 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-headline-md text-headline-md text-[18px]">Student Roll Call</h3>
+<span class="font-label-sm text-on-surface-variant bg-white px-md py-xs rounded-full border border-outline-variant/30">34 Students Registered</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50/30 text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider">
+<tr>
+<th class="px-lg py-md">ID</th>
+<th class="px-lg py-md">Student Name</th>
+<th class="px-lg py-md">Status Toggle</th>
+<th class="px-lg py-md text-right">Last Update</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Student 1 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group">
+<td class="px-lg py-md text-body-sm text-on-surface-variant">#2023001</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Student avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkHE6M9vKNLP1R_IK5wOAfLFv9JY935k-rtUMXvKcjuax4GF5glOeW5CcDb_vHswqdvA6wDRmXrii39yncAQRCtLMp782cJ2s68zhXqKtpiKbkBG5qlscvz2UKt-07NuMmmtqOpp3ViirHzrxZrb2lg-A23cjuK4hykqc9IJhtmq7cZ5ASZIrJTAz5o2UzM7wQNJ-QCLTWrUKOS8rX_BfqeJyaQ7rUoJ-ZXsKrsAg3_RtRIRkbjatAHZEBQz0vv-sv2jejZLEeHd7m"/>
+</div>
+<span class="font-body-md font-medium">Alexandre Verano</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-lg w-fit">
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all bg-green-500 text-white shadow-sm" data-status="hadir" onclick="setStatus(this, 'hadir')">HADIR</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="izin" onclick="setStatus(this, 'izin')">IZIN</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="sakit" onclick="setStatus(this, 'sakit')">SAKIT</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="alpha" onclick="setStatus(this, 'alpha')">ALPHA</button>
+</div>
+</td>
+<td class="px-lg py-md text-right text-body-sm text-on-surface-variant">08:02 AM</td>
+</tr>
+<!-- Student 2 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group">
+<td class="px-lg py-md text-body-sm text-on-surface-variant">#2023002</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Student avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6qA3kRYT0C3kbyRdgiZCKMh2VTIMgXJMdITII3DW2ENVHZ9KY45YQpI80r2GJ1xOyB8-iJk5jhokARrq-500W6DETaqzQ8y8S3bSCJxhTWdEXOU7QFOnuDIBkEkXUJxrhwF6jCaJtKLA121P-YruK8PQ32Tm49gkck2YH4fLzIJAZAUdXT2fJnynUQUAG8XOzUZBjT65vjgCZ3jizBxiD5-cfV7cnnBOOAT2Z3g-YB_Uyp9vJrPFAiAtlg6vG30XKc0ACUFRsYdPP"/>
+</div>
+<span class="font-body-md font-medium">Chloe Montgomery</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-lg w-fit">
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="hadir" onclick="setStatus(this, 'hadir')">HADIR</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="izin" onclick="setStatus(this, 'izin')">IZIN</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all bg-blue-500 text-white shadow-sm" data-status="sakit" onclick="setStatus(this, 'sakit')">SAKIT</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="alpha" onclick="setStatus(this, 'alpha')">ALPHA</button>
+</div>
+</td>
+<td class="px-lg py-md text-right text-body-sm text-on-surface-variant">07:55 AM</td>
+</tr>
+<!-- Student 3 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group">
+<td class="px-lg py-md text-body-sm text-on-surface-variant">#2023003</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Student avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkzddmoRB_5ZhIcNZ013SAKlr6LdIN4ZQ3jZsuknvDmwzbNMCj4SY_TS4nQ065usu8In1zb1r_pjsUHaOi_daqQ7Pyo3nYkaEhoYvJa-sfBQAUKklbp5-mJPQOnzKxXH1TJh_hs3M2aShO7rcwf2CN4xfPojWe2h5X53Dw3NeVn2AkUqCqEO1dASiNIU0SZc417u4W4i6RV_9u3j45hHqfU7Rag-N5_N2t7J-m9a0di3PJa277XkVxDvnNsRFvqolFzbNAdsW3J-Ez"/>
+</div>
+<span class="font-body-md font-medium">David Sterling</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-lg w-fit">
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="hadir" onclick="setStatus(this, 'hadir')">HADIR</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="izin" onclick="setStatus(this, 'izin')">IZIN</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="sakit" onclick="setStatus(this, 'sakit')">SAKIT</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all bg-red-500 text-white shadow-sm" data-status="alpha" onclick="setStatus(this, 'alpha')">ALPHA</button>
+</div>
+</td>
+<td class="px-lg py-md text-right text-body-sm text-on-surface-variant">-</td>
+</tr>
+<!-- Student 4 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group">
+<td class="px-lg py-md text-body-sm text-on-surface-variant">#2023004</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Student avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmSRs3xy-FqwXUVmI7Cq7PrrLRhQ6DDL3p_fGUgOgxcqDDCiMPtk1byd9iWn6gC16QEEMyfmIokGuS9LeOhV8ABxPAx1VImvidICgsKEz-zEAVOYnTLWOfH9x0a9RxcgGVT-hskt5s6yPr67VLycK2-5YDok4YujQuG8iaxSDUIyIGdZoFLTjWoxEdFelEIUuB7wbIyVqL5kblOZWnle8GhAzwhi15OwB-Xl-qF9SwgtUzX8_uZR3CVORi8sahyykXLMexDmOZmPo7"/>
+</div>
+<span class="font-body-md font-medium">Elena Rodriguez</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-lg w-fit">
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="hadir" onclick="setStatus(this, 'hadir')">HADIR</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all bg-yellow-500 text-white shadow-sm" data-status="izin" onclick="setStatus(this, 'izin')">IZIN</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="sakit" onclick="setStatus(this, 'sakit')">SAKIT</button>
+<button class="attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white" data-status="alpha" onclick="setStatus(this, 'alpha')">ALPHA</button>
+</div>
+</td>
+<td class="px-lg py-md text-right text-body-sm text-on-surface-variant">08:15 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto p-md border-t border-outline-variant/20 flex justify-center bg-slate-50/50">
+<button class="font-label-md text-primary hover:underline transition-all">View All 34 Students</button>
+</div>
+</div>
+<!-- Right Sidebar: Highlights & Quick Summary -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-lg">
+<!-- Attendance Heatmap/Mini Chart Placeholder -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-lg shadow-sm">
+<h4 class="font-headline-md text-headline-md text-[16px] mb-md">Weekly Trend</h4>
+<div class="flex items-end justify-between h-32 gap-xs">
+<div class="w-full bg-slate-100 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary/40 rounded-t-md h-[80%] transition-all group-hover:bg-primary"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] font-bold text-on-surface-variant">MON</span>
+</div>
+<div class="w-full bg-slate-100 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary/40 rounded-t-md h-[95%] transition-all group-hover:bg-primary"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] font-bold text-on-surface-variant">TUE</span>
+</div>
+<div class="w-full bg-slate-100 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-md h-[88%] shadow-lg"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] font-bold text-primary">WED</span>
+</div>
+<div class="w-full bg-slate-100 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary/40 rounded-t-md h-0 transition-all group-hover:bg-primary"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] font-bold text-on-surface-variant">THU</span>
+</div>
+<div class="w-full bg-slate-100 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary/40 rounded-t-md h-0 transition-all group-hover:bg-primary"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] font-bold text-on-surface-variant">FRI</span>
+</div>
+</div>
+<div class="mt-10 pt-md border-t border-outline-variant/20">
+<p class="text-body-sm text-on-surface-variant">Average attendance this week is <span class="text-primary font-bold">92%</span>. This is 3% higher than last week.</p>
+</div>
+</div>
+<!-- Absence Notifications Card -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-lg shadow-sm">
+<div class="flex items-center justify-between mb-md">
+<h4 class="font-headline-md text-headline-md text-[16px]">Quick Notifications</h4>
+<span class="w-5 h-5 bg-error text-white text-[10px] rounded-full flex items-center justify-center font-bold">2</span>
+</div>
+<div class="space-y-md">
+<div class="flex gap-md p-sm rounded-lg hover:bg-slate-50 transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-error/10 text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Send Absence Note</p>
+<p class="text-[11px] text-on-surface-variant">David Sterling (Alpha) needs parent notification.</p>
+</div>
+</div>
+<div class="flex gap-md p-sm rounded-lg hover:bg-slate-50 transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment_late">assignment_late</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Verify Medical Note</p>
+<p class="text-[11px] text-on-surface-variant">Chloe Montgomery uploaded a doctor's certificate.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm rounded-lg border-2 border-dashed border-outline-variant hover:bg-slate-50 transition-all font-label-md text-on-surface-variant active:scale-95">
+                                Send All Reminders
+                            </button>
+</div>
+<!-- Class Profile Image Card -->
+<div class="relative group rounded-xl overflow-hidden h-48 shadow-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A bright, modern classroom scene with large windows letting in natural morning light. The room features ergonomic furniture in a palette of soft blues and whites. A high-resolution digital chalkboard displays physics equations, embodying a high-performance academic environment that is clean, professional, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWLcFjpuJPPDOEKCwHEKbvf71a6zSlXJBUPpW3GBlnnjSfOprOzcy7x1_V34pe6zMO55NzPSxfGfCtYsThjAbad8oQ7Q3nLOQ3mPPTnlSMLghW15x0r42WxnXW5as-SQoJTqy7PaJ9qeLgHPxeCiCdVTVVDS-tgByw444vsLrg2BJCJF7T9kCHemCErSobHonj-fDvAglBpzQaQHxtc78GTTUIDw29q_iVKId-rH_27snFO8ExfFTOS7XmRVvEOkSm4G37WbnyS1oY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-lg">
+<p class="text-white font-headline-md text-[18px]">Grade 12-B Science</p>
+<p class="text-white/80 text-body-sm">Room 402 • Science Wing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        function setStatus(btn, status) {
+            // Find the container for this specific student's buttons
+            const container = btn.closest('div');
+            const buttons = container.querySelectorAll('.attendance-btn');
+            
+            // Define active styles
+            const styles = {
+                hadir: { bg: 'bg-green-500', text: 'text-white', shadow: 'shadow-sm' },
+                izin: { bg: 'bg-yellow-500', text: 'text-white', shadow: 'shadow-sm' },
+                sakit: { bg: 'bg-blue-500', text: 'text-white', shadow: 'shadow-sm' },
+                alpha: { bg: 'bg-red-500', text: 'text-white', shadow: 'shadow-sm' }
+            };
+
+            // Reset all buttons in this row
+            buttons.forEach(b => {
+                b.className = 'attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all text-on-surface-variant hover:bg-white';
+            });
+
+            // Apply active style to clicked button
+            const activeStyle = styles[status];
+            btn.className = `attendance-btn px-3 py-1 rounded-md text-[10px] font-bold transition-all ${activeStyle.bg} ${activeStyle.text} ${activeStyle.shadow}`;
+        }
+
+        // Add a subtle entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    row.style.transition = 'all 0.4s ease-out';
+                    row.style.opacity = '1';
+                    row.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+        });
+    </script>
+</body></html>

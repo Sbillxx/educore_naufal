@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academia Pro | Kelola Jadwal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eaedff",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "surface-container-high": "#e2e7ff",
+                    "tertiary-fixed": "#acedff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#d7f6ff",
+                    "outline": "#737686",
+                    "on-primary-container": "#eeefff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#00174b",
+                    "on-surface": "#131b2e",
+                    "secondary": "#4b41e1",
+                    "surface-dim": "#d2d9f4",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#e2dfff",
+                    "surface-container-low": "#f2f3ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#fffbff",
+                    "surface": "#faf8ff",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#0053db",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "on-surface-variant": "#434655",
+                    "primary": "#004ac6",
+                    "inverse-on-surface": "#eef0ff",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#faf8ff",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "on-secondary-fixed-variant": "#3323cc",
+                    "secondary-container": "#645efb",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed": "#001f26",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-fixed": "#0f0069",
+                    "tertiary-container": "#00788c",
+                    "on-background": "#131b2e",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-surface": "#283044",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#005e6e",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#b4c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "1.5rem",
+                    "container-max": "1440px",
+                    "sidebar-collapsed": "72px",
+                    "gutter": "1.5rem",
+                    "xl": "2.5rem",
+                    "md": "1rem",
+                    "sm": "0.75rem",
+                    "xs": "0.5rem",
+                    "sidebar-expanded": "260px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #faf8ff; color: #131b2e; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(195, 198, 215, 0.3);
+        }
+        .sidebar-active {
+            color: #004ac6;
+            background-color: rgba(219, 225, 255, 0.3);
+            font-weight: 700;
+            border-radius: 0.5rem;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c3c6d7; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Layout Shell -->
+<div class="flex min-h-screen">
+<!-- Sidebar (JSON Logic: SideNavBar) -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-white border-r border-outline-variant/30 flex flex-col p-md gap-xs z-50">
+<div class="flex items-center gap-md px-md py-lg">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">EduCore</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Academic Management</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs mt-lg">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm sidebar-active transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md">Schedules</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span class="font-label-md">Attendance</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md">Students</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+<span class="font-label-md">Grades</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md">Reports</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/30 pt-md flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-error hover:bg-error-container/20 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-[260px] flex-1 min-w-0 bg-background">
+<!-- Top App Bar (JSON Logic: TopNavBar) -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex justify-between items-center w-full px-lg py-sm">
+<div class="flex items-center gap-xl">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Academia Pro</h2>
+<div class="hidden md:flex items-center bg-surface-container-low border border-outline-variant/30 rounded-full px-md py-xs w-80">
+<span class="material-symbols-outlined text-on-surface-variant mr-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-full" placeholder="Search schedules..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional headshot of a middle-aged academic administrator with a warm, confident expression. He is wearing a charcoal grey suit and a light blue shirt, set against a blurred office library background with soft, natural morning light. The photo has a high-end corporate portrait aesthetic with crisp focus and professional color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsi5iCF2OrwdlViURo1VZRuzZArJwG-TddAeMK-uq2HeApgi-Uq-DpJlp1H6KdyEyZbFqE0cuC8w4JzscGwrXdc2B3VVUR-ZCZAdhyVs78_MurL_JnbF27-plu_CWLG4siRK4FWj_L-qEK7qWV2vXPKkhfyox0m_2mhkwhPhzrARBFZ19QR9XzFthHkS67g19IUSCyVEXsc6yg81duegHMfO2BpUCBqOLq_3Dog7YKxeq5nE243_WMobsKvjDcYVmVwWgtvYOzj8r4"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-xl max-w-7xl mx-auto space-y-xl">
+<!-- Page Header & Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Kelola Jadwal</h3>
+<p class="text-on-surface-variant mt-xs">Manage class schedules, assign teachers, and coordinate rooms.</p>
+</div>
+<button class="flex items-center justify-center gap-sm px-lg py-sm bg-gradient-to-r from-primary to-secondary text-white rounded-xl shadow-md hover:shadow-lg transition-all -translate-y-0.5 active:translate-y-0 font-label-md" onclick="document.getElementById('modal-add-schedule').classList.remove('hidden')">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Tambah Jadwal
+                    </button>
+</div>
+<!-- Filters Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="glass-card p-md rounded-xl space-y-xs">
+<label class="font-label-sm text-on-surface-variant px-xs">Class</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant/50 rounded-lg text-body-sm focus:ring-primary focus:border-primary">
+<option>All Classes</option>
+<option>Grade 10-A</option>
+<option>Grade 10-B</option>
+<option>Grade 11-Science</option>
+</select>
+</div>
+<div class="glass-card p-md rounded-xl space-y-xs">
+<label class="font-label-sm text-on-surface-variant px-xs">Day</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant/50 rounded-lg text-body-sm focus:ring-primary focus:border-primary">
+<option>Every Day</option>
+<option>Monday</option>
+<option>Tuesday</option>
+<option>Wednesday</option>
+</select>
+</div>
+<div class="glass-card p-md rounded-xl space-y-xs">
+<label class="font-label-sm text-on-surface-variant px-xs">Subject</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant/50 rounded-lg text-body-sm focus:ring-primary focus:border-primary">
+<option>All Subjects</option>
+<option>Mathematics</option>
+<option>Physics</option>
+<option>English Literature</option>
+</select>
+</div>
+<div class="glass-card p-md rounded-xl flex items-end">
+<button class="w-full h-[38px] flex items-center justify-center gap-xs bg-surface-container-high text-primary rounded-lg hover:bg-primary hover:text-white transition-all font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                            Apply Filters
+                        </button>
+</div>
+</div>
+<!-- Main Schedule Table Container -->
+<div class="bg-white rounded-2xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider">Subject</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider">Teacher</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider">Day</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider">Time</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider">Class</th>
+<th class="px-lg py-md font-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Advanced Mathematics</p>
+<p class="text-body-sm text-on-surface-variant">Theory &amp; Logic</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a professional female teacher with a friendly smile, wearing a modern navy blazer. She is standing in a brightly lit contemporary classroom with a whiteboard and educational posters in the soft-focus background. The image has a clean, academic, and warm professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArlbwPaVWZhB8RH35Nrba0f5kAMlHfvgS7QIb94Eaog2rZBAwZKVktfJOtAwoMguF1_RHIbsvN7WIPxGWTnWXAN0seqlXu6MKwgXXN2fM4qGG3sZmprLviKMPVI9UVCAoF46YpmBIRwpc95gJ3Y7eGR1lraLat54n-kjDm5OSUBlHTu3qfDLw7yHyo1NjNVOnYISWEpe6h5zLruBKKonJD7HJ4t-Zb5vXlT8tB2cDvvL0qOtZs0bp95b3r_h2pGRpLNvV3sK4pdXKx"/>
+<span class="text-body-sm text-on-surface">Prof. Sarah Jenkins</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 rounded-full bg-primary-fixed/30 text-primary font-label-sm">Monday</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex flex-col">
+<span class="text-body-sm font-bold text-on-surface">08:00 - 09:30</span>
+<span class="text-xs text-on-surface-variant">90 Minutes</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="font-label-md text-on-surface-variant">Grade 12-A</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-xs opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-xs text-primary hover:bg-primary-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-xs text-error hover:bg-error-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Applied Physics</p>
+<p class="text-body-sm text-on-surface-variant">Lab Session</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a male teacher in his late 30s with short hair and glasses, wearing a casual grey sweater. He is posing in a modern physics laboratory surrounded by scientific equipment and glass beakers. The lighting is bright and industrial, emphasizing a high-tech educational environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVlOJ1Oq7PZetEmPVHpRIHyNkppV7pCV5_sk1AHI-bffYAbbeMX3DNR9MwsRbjuqlaEhf9rDKifMZl0fxybIFJ6BQL5Ej97IOVZ-t4D2UvAwUabtC56jmtMd9SZ9O-cjCgsiSVmNeDHmd4iM93bFjL1fQ5OyNYx1qmBMIdzy-LOh7sHfZXcDFzDnyCxgydSn2AqBlS-pdcbnX1K1luNjV3sNPyYiD-OW7U7fTQmBpm96JqNwqs440RLI5_iVHn5SXMoZCwHq0hu5bb"/>
+<span class="text-body-sm text-on-surface">Dr. Marcus Thorne</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 rounded-full bg-primary-fixed/30 text-primary font-label-sm">Tuesday</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex flex-col">
+<span class="text-body-sm font-bold text-on-surface">10:00 - 12:00</span>
+<span class="text-xs text-on-surface-variant">120 Minutes</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="font-label-md text-on-surface-variant">Grade 11-B</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-xs opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-xs text-primary hover:bg-primary-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-xs text-error hover:bg-error-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">World History</p>
+<p class="text-body-sm text-on-surface-variant">Modern Era</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A smiling young male teacher with a neat beard, wearing a stylish olive green button-down shirt. He is sitting in a contemporary university library with rows of books in the background. The scene is illuminated by soft, focused light, creating an inviting and intelligent atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB244yluTagzFnPs5kXzE70eJfDCDn_vg6-l0zDuSR52g2RlXESmRWIONK6HbPJcq5_E4euT8lT0SmQhRNNp3-ZfS2K4Gr0ADGoHt8ZO3e9cUSja82Vhx2sUFMqP__q4KuDNfHe5asYgd4p6ZJxwFF3B7IXfka_dmaOPoD_8fD4KMx59lJlqmtoXjaZmwQJlWyQU2kRhrQjyt45owqECGMyYpkuy5NrUK-4tgiBgsRKwLwwGita1AIVw82YVMhwjGgzamrjlfbpaXG1"/>
+<span class="text-body-sm text-on-surface">Julian Vane, M.A.</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 rounded-full bg-primary-fixed/30 text-primary font-label-sm">Monday</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex flex-col">
+<span class="text-body-sm font-bold text-on-surface">13:00 - 14:30</span>
+<span class="text-xs text-on-surface-variant">90 Minutes</span>
+</div>
+</td>
+<td class="px-lg py-lg">
+<span class="font-label-md text-on-surface-variant">Grade 10-C</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-xs opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-xs text-primary hover:bg-primary-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-xs text-error hover:bg-error-container/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-lg py-md bg-surface-container-low/30 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="text-body-sm text-on-surface-variant">Showing 3 of 42 schedules</span>
+<div class="flex gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container transition-colors font-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container transition-colors font-label-sm">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Modal: Tambah Jadwal -->
+<div class="fixed inset-0 z-[60] hidden overflow-y-auto" id="modal-add-schedule">
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="document.getElementById('modal-add-schedule').classList.add('hidden')"></div>
+<div class="flex min-h-full items-center justify-center p-md text-center sm:p-0">
+<div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-outline-variant/30">
+<div class="bg-primary/5 px-lg py-md border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Add New Schedule</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('modal-add-schedule').classList.add('hidden')">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<form class="p-lg space-y-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Subject Name</label>
+<div class="relative">
+<span class="absolute left-3 top-3 text-on-surface-variant material-symbols-outlined text-[20px]" data-icon="book">book</span>
+<input class="w-full h-12 pl-10 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="e.g. Organic Chemistry" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Teacher</label>
+<select class="w-full h-12 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-sm">
+<option>Select Teacher</option>
+<option>Prof. Sarah Jenkins</option>
+<option>Dr. Marcus Thorne</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Class</label>
+<select class="w-full h-12 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-sm">
+<option>Select Class</option>
+<option>Grade 10-A</option>
+<option>Grade 11-B</option>
+</select>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Day of Week</label>
+<div class="flex gap-xs">
+<button class="flex-1 py-sm rounded-lg bg-primary text-white font-label-sm" type="button">Mon</button>
+<button class="flex-1 py-sm rounded-lg bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors" type="button">Tue</button>
+<button class="flex-1 py-sm rounded-lg bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors" type="button">Wed</button>
+<button class="flex-1 py-sm rounded-lg bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors" type="button">Thu</button>
+<button class="flex-1 py-sm rounded-lg bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors" type="button">Fri</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Start Time</label>
+<input class="w-full h-12 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-sm" type="time"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">End Time</label>
+<input class="w-full h-12 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-sm" type="time"/>
+</div>
+</div>
+<div class="pt-md flex gap-md">
+<button class="flex-1 py-sm bg-surface-container-high text-on-surface font-bold rounded-xl hover:bg-surface-variant transition-colors" onclick="document.getElementById('modal-add-schedule').classList.add('hidden')" type="button">Cancel</button>
+<button class="flex-1 py-sm bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all" type="submit">Save Schedule</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Floating Atmosphere Elements -->
+<div class="fixed top-20 right-[-100px] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-20 left-[-100px] w-[300px] h-[300px] bg-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+<script>
+        // Micro-interactions for Day buttons in Modal
+        document.querySelectorAll('#modal-add-schedule button[type="button"].flex-1').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Find parent and toggle siblings
+                const parent = this.parentElement;
+                parent.querySelectorAll('button').forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+                this.classList.add('bg-primary', 'text-white');
+            });
+        });
+
+        // Simple row deletion mock
+        document.querySelectorAll('.group button.text-error').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(confirm('Are you sure you want to delete this schedule?')) {
+                    this.closest('tr').classList.add('opacity-0', '-translate-x-full');
+                    setTimeout(() => {
+                        this.closest('tr').remove();
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body></html>

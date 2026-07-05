@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academia Pro | Grade Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eaedff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#d7f6ff",
+                        "outline": "#737686",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#00174b",
+                        "on-surface": "#131b2e",
+                        "secondary": "#4b41e1",
+                        "surface-dim": "#d2d9f4",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#e2dfff",
+                        "surface-container-low": "#f2f3ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0053db",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "on-surface-variant": "#434655",
+                        "primary": "#004ac6",
+                        "inverse-on-surface": "#eef0ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-secondary-fixed-variant": "#3323cc",
+                        "secondary-container": "#645efb",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#001f26",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-fixed": "#0f0069",
+                        "tertiary-container": "#00788c",
+                        "on-background": "#131b2e",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-surface": "#283044",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#005e6e",
+                        "background": "#faf8ff",
+                        "inverse-primary": "#b4c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "1.5rem",
+                        "container-max": "1440px",
+                        "sidebar-collapsed": "72px",
+                        "gutter": "1.5rem",
+                        "xl": "2.5rem",
+                        "md": "1rem",
+                        "sm": "0.75rem",
+                        "xs": "0.5rem",
+                        "sidebar-expanded": "260px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #faf8ff; color: #131b2e; font-family: 'Inter', sans-serif; }
+        .glass-sidebar { backdrop-filter: blur(12px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .grade-input:focus { outline: none; border-color: #004ac6; box-shadow: 0 0 0 2px rgba(0, 74, 198, 0.1); }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- Sidebar Wrapper -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-expanded bg-white border-r border-outline-variant/30 flex flex-col p-md gap-xs z-50">
+<!-- Brand -->
+<div class="flex items-center gap-md px-md py-sm mb-lg">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">EduCore</h1>
+<p class="font-label-md text-label-md text-on-surface-variant opacity-70">Academic Management</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">calendar_month</span>
+<span class="font-label-md text-label-md">Schedules</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">how_to_reg</span>
+<span class="font-label-md text-label-md">Attendance</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">group</span>
+<span class="font-label-md text-label-md">Students</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-primary font-bold bg-primary-fixed/30 rounded-lg group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grade</span>
+<span class="font-label-md text-label-md">Grades</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</nav>
+<!-- Footer Nav -->
+<div class="pt-md border-t border-outline-variant/30 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-all rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-error">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-sidebar-expanded h-screen flex flex-col overflow-hidden">
+<!-- Top Bar -->
+<header class="h-16 flex justify-between items-center px-lg bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 sticky top-0 z-40">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md text-primary font-bold">Academia Pro</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-xs hover:bg-surface-container-high rounded-full transition-colors">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-xs hover:bg-surface-container-high rounded-full transition-colors">dark_mode</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer active:scale-95 duration-200">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SSa9EIZSZuUtQ3oL0GfQoUUuaUw6f4o0VlDu_cW269wOj1M0h4sznQVjli2m2RDVXDQsQva9q3FXTzkEcUoZfvjnw4hQAlUp0PiJH69yHb_WWjjoEx_1df_29oKvFi65Ty79x8ktpvSmbiwL6Z4NgDQCBOZA9h31jHqtzzGdhAVQnLp5_gRrBabtAmcP0XNbTTkvQwTlLnd5dhFX3RFoEh0WK1s72Qj4CO8pZTaa60fDNAf3aE4xh8cPBbBhwxFYFm_RyjJDfo6H"/>
+</div>
+</div>
+</header>
+<!-- Dynamic Content Area -->
+<div class="flex-1 overflow-y-auto p-lg bg-slate-50 space-y-xl no-scrollbar">
+<!-- Selection Headers -->
+<div class="bg-white p-lg rounded-xl shadow-sm border border-slate-100 flex flex-wrap items-end gap-lg">
+<div class="space-y-xs flex-1 min-w-[240px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Academic Year &amp; Term</label>
+<div class="relative">
+<select class="w-full h-12 px-md bg-slate-100 border-none rounded-lg font-body-md text-body-md appearance-none focus:ring-2 focus:ring-primary/20">
+<option>Odd Semester 2023/2024</option>
+<option>Even Semester 2023/2024</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="space-y-xs flex-1 min-w-[240px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Choose Class</label>
+<div class="relative">
+<select class="w-full h-12 px-md bg-slate-100 border-none rounded-lg font-body-md text-body-md appearance-none focus:ring-2 focus:ring-primary/20" id="class-select" onchange="toggleEmptyState()">
+<option value="">Select a Class...</option>
+<option value="12-A">Class 12-A Science</option>
+<option value="12-B">Class 12-B Social</option>
+<option value="11-C">Class 11-C Arts</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="space-y-xs flex-1 min-w-[240px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Choose Subject</label>
+<div class="relative">
+<select class="w-full h-12 px-md bg-slate-100 border-none rounded-lg font-body-md text-body-md appearance-none focus:ring-2 focus:ring-primary/20">
+<option>Mathematics Advanced</option>
+<option>Physics II</option>
+<option>World History</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<button class="h-12 px-lg bg-primary text-white rounded-lg font-label-md flex items-center gap-xs hover:shadow-lg hover:-translate-y-px transition-all">
+<span class="material-symbols-outlined">filter_list</span>
+                    Apply Filters
+                </button>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-xl space-y-md text-center" id="empty-state">
+<div class="w-64 h-64 relative">
+<img class="w-full h-full object-cover rounded-3xl opacity-60 grayscale" data-alt="A clean, minimalist workspace scene with an empty glass desk, a modern white chair, and soft morning sunlight filtering through high windows. The atmosphere is peaceful and organized, reflecting a fresh start or a blank canvas for productivity in a high-end corporate setting with a cool blue and white palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBniUoPazoVHTRv868USSu6H-PGchNmOLV93ENHT1e1drPyIZFMixWOuD3ZqGC0F_9mqHGiAp8aHimMx_dWHUhFwOAak06tLwiEAZmNsnG8Ju4MHUigOLxdWFhTQceG0aR5ASgiyTAskhDCVaOHLoZHQv7gPK_bt-s0t7mv6rpRW9irl3ri-Dnd2ZsdFLTvr5e2APcikY_w239e_hfFh9Ta2fBrk1QNWr2iVCq4tYwyz0tVK5YmXuVc9yzS5TrBJu4hZxCKoU5mPwDR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-50 to-transparent"></div>
+</div>
+<div class="max-w-md">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">No Class Selected</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Please select a class and subject from the dropdowns above to start entering student grades for this semester.</p>
+</div>
+</div>
+<!-- Grade Table Section (Hidden by default) -->
+<div class="hidden space-y-md" id="grade-content">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Student Grade Registry</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Class 12-A Science • Mathematics Advanced</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-outline-variant text-on-surface-variant rounded-lg font-label-md flex items-center gap-xs hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span> Export CSV
+                        </button>
+<button class="px-md py-sm border border-outline-variant text-on-surface-variant rounded-lg font-label-md flex items-center gap-xs hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">upload</span> Import Bulk
+                        </button>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 border-b border-slate-100">
+<tr>
+<th class="px-lg py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Student Name</th>
+<th class="px-md py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-center">Assignment</th>
+<th class="px-md py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-center">Mid-term (UTS)</th>
+<th class="px-md py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-center">Final-term (UAS)</th>
+<th class="px-md py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-center">Final Score</th>
+<th class="px-md py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="group hover:bg-blue-50/30 transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed-dim flex items-center justify-center font-bold text-secondary">AA</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Aditya Ardianto</p>
+<p class="text-[12px] text-on-surface-variant">NISN: 00987211</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="85"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="78"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="92"/>
+</td>
+<td class="px-md py-md text-center">
+<span class="final-score font-headline-md text-headline-md text-primary">85.0</span>
+</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                        Approved
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-slate-200 rounded transition-colors"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-blue-50/30 transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center font-bold text-tertiary">BP</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Bagus Prasetyo</p>
+<p class="text-[12px] text-on-surface-variant">NISN: 00987212</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="45"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="50"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="0"/>
+</td>
+<td class="px-md py-md text-center">
+<span class="final-score font-headline-md text-headline-md text-error">31.6</span>
+</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                        Revised
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-slate-200 rounded transition-colors"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-blue-50/30 transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">CN</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Citra Nuraini</p>
+<p class="text-[12px] text-on-surface-variant">NISN: 00987213</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="0"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="0"/>
+</td>
+<td class="px-md py-md text-center">
+<input class="grade-input w-16 h-10 bg-slate-100 border-none rounded text-center font-body-md" oninput="calculateRow(this)" type="number" value="0"/>
+</td>
+<td class="px-md py-md text-center">
+<span class="final-score font-headline-md text-headline-md text-on-surface-variant opacity-30">0.0</span>
+</td>
+<td class="px-md py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800">
+                                        Pending
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-slate-200 rounded transition-colors"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="hidden h-20 bg-white border-t border-outline-variant/30 px-lg flex items-center justify-between shadow-[0_-4px_20px_rgba(0,0,0,0.03)] z-40" id="footer-actions">
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-green-500"></span>
+<span class="font-label-md text-label-md">1 Approved</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-orange-400"></span>
+<span class="font-label-md text-label-md">1 Revised</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="font-label-md text-label-md">1 Pending</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="px-lg py-sm font-label-md text-on-surface-variant hover:bg-slate-100 rounded-lg transition-colors">Discard Draft</button>
+<button class="px-xl py-sm bg-primary text-white rounded-lg font-label-md shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-sm" onclick="submitGrades()">
+<span class="material-symbols-outlined text-[20px]">send</span> Submit All Grades
+                </button>
+</div>
+</div>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        function toggleEmptyState() {
+            const select = document.getElementById('class-select');
+            const emptyState = document.getElementById('empty-state');
+            const gradeContent = document.getElementById('grade-content');
+            const footerActions = document.getElementById('footer-actions');
+
+            if (select.value) {
+                emptyState.classList.add('hidden');
+                gradeContent.classList.remove('hidden');
+                footerActions.classList.remove('hidden');
+                footerActions.classList.add('flex');
+            } else {
+                emptyState.classList.remove('hidden');
+                gradeContent.classList.add('hidden');
+                footerActions.classList.add('hidden');
+                footerActions.classList.remove('flex');
+            }
+        }
+
+        function calculateRow(input) {
+            const row = input.closest('tr');
+            const inputs = row.querySelectorAll('input[type="number"]');
+            const scoreDisplay = row.querySelector('.final-score');
+            
+            let assignment = parseFloat(inputs[0].value) || 0;
+            let uts = parseFloat(inputs[1].value) || 0;
+            let uas = parseFloat(inputs[2].value) || 0;
+
+            // Basic Weighted Calc: 30% Assig, 30% UTS, 40% UAS
+            let final = (assignment * 0.3) + (uts * 0.3) + (uas * 0.4);
+            scoreDisplay.innerText = final.toFixed(1);
+
+            // Dynamic Color Coding
+            if (final >= 75) {
+                scoreDisplay.classList.remove('text-error', 'opacity-30');
+                scoreDisplay.classList.add('text-primary');
+            } else if (final > 0) {
+                scoreDisplay.classList.remove('text-primary', 'opacity-30');
+                scoreDisplay.classList.add('text-error');
+            } else {
+                scoreDisplay.classList.add('opacity-30');
+            }
+        }
+
+        function submitGrades() {
+            const btn = event.currentTarget;
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Processing...';
+            btn.disabled = true;
+            btn.classList.add('opacity-70');
+
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Grades Submitted!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-green-600', 'opacity-70');
+                    btn.classList.add('bg-primary');
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+        }
+    </script>
+</body></html>
