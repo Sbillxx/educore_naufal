@@ -25,6 +25,7 @@ export default function Sidebar({ role, isOpen, onClose }: SidebarProps) {
     admin: [
       { name: "Dashboard", href: "/admin", icon: "dashboard" },
       { name: "Kelola User", href: "/admin/user", icon: "manage_accounts" },
+      { name: "Hak Akses & Role", href: "/admin/hak-akses", icon: "admin_panel_settings" },
       { name: "Kelola Guru", href: "/admin/guru", icon: "person_4" },
       { name: "Kelola Siswa", href: "/admin/siswa", icon: "face" },
       { name: "Kelola Kelas", href: "/admin/kelas", icon: "meeting_room" },
@@ -32,7 +33,6 @@ export default function Sidebar({ role, isOpen, onClose }: SidebarProps) {
       { name: "Kelola Jadwal", href: "/admin/jadwal", icon: "calendar_month" },
       { name: "Pengumuman", href: "/admin/pengumuman", icon: "campaign" },
       { name: "Laporan Akademik", href: "/admin/laporan", icon: "assessment" },
-      { name: "Settings", href: "/admin/settings", icon: "settings" },
     ],
     "wali-kelas": [
       { name: "Dashboard", href: "/wali-kelas", icon: "dashboard" },

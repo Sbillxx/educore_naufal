@@ -29,9 +29,9 @@ export default auth((req) => {
   if (isLoggedIn) {
     const path = nextUrl.pathname;
     
-    // Admin routes
-    if (path.startsWith("/admin") && role !== "admin") {
-      return NextResponse.redirect(new URL(`/${getRoleBaseRoute(role)}`, nextUrl));
+    // Super Admin has full access to all routes
+    if (role === "admin") {
+      return NextResponse.next();
     }
     
     // Wali Kelas routes
